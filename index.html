@@ -99,6 +99,17 @@
         .download-btn:hover {
             background: #125ea7;
         }
+        .website-link {
+            color: #1976d2;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid #1976d2;
+            transition: color 0.2s, border-bottom 0.2s;
+        }
+        .website-link:hover {
+            color: #125ea7;
+            border-bottom: 2px solid #125ea7;
+        }
         @media (max-width: 600px) {
             .container {
                 padding: 20px 8px;
@@ -144,7 +155,9 @@
             <div class="profile-info">
                 <h1>Koso Bilegsaikhan</h1>
                 <p>Full-Stack Developer</p>
-                <p>khosbilegt.b@gmail.com | (61) 0435-191-722 | Sydney, Australia</p>
+                <p>khosbilegt.b@gmail.com | (61) 0435-191-722 | <span>
+                <a href="https://koso.dev" target="_blank" class="website-link">https://koso.dev</a>
+                </span> | Sydney, Australia</p>
             </div>
         </section>
         <section class="profile">
