@@ -20,7 +20,7 @@
             box-shadow: 0 4px 24px rgba(0,0,0,0.08);
             padding: 40px 32px;
         }
-        header {
+        .header {
             display: flex;
             align-items: center;
             gap: 24px;
@@ -82,6 +82,23 @@
             border-radius: 20px;
             font-size: 1em;
         }
+        .download-btn {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 10px 24px;
+            background: #1976d2;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+        }
+        .download-btn:hover {
+            background: #125ea7;
+        }
         @media (max-width: 600px) {
             .container {
                 padding: 20px 8px;
@@ -96,23 +113,45 @@
                 height: 72px;
             }
         }
+        @media print {
+            body {
+                background: #fff !important;
+            }
+            .download-btn {
+                display: none !important;
+            }
+            .container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 0.5in 0.5in !important;
+                max-width: 100% !important;
+            }
+            .header, .profile, .experience {
+                page-break-inside: avoid;
+                page-break-after: avoid;
+            }
+            .header + .profile, .profile + .experience {
+                page-break-before: auto;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
+        <button class="download-btn" onclick="window.print()">Download as PDF</button>
+        <section class="header">
             <img src="./me.png" alt="Avatar" class="avatar">
             <div class="profile-info">
                 <h1>Koso Bilegsaikhan</h1>
                 <p>Full-Stack Developer</p>
                 <p>khosbilegt.b@gmail.com | (61) 0435-191-722 | Sydney, Australia</p>
             </div>
-        </header>
-        <section>
+        </section>
+        <section class="profile">
             <h2>Profile</h2>
             <p>I'm a Full-Stack Developer with over 3 years of professional experience. I specialize in researching obscure and emerging technologies to uncover hidden opportunities. My focus is turning technical exploration into real business value.</p>
         </section>
-        <section>
+        <section class="experience">
             <h2>Experience</h2>
             <div class="experience">
                 <span class="job-title">Full-Stack Developer</span> <span class="company">@ Unitel LLC</span> <span class="date">2023-2025</span>
