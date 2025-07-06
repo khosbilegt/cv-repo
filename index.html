@@ -73,12 +73,12 @@
             padding: 0;
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 5px;
         }
         ul.skills li {
             background: #e3f2fd;
             color: #1976d2;
-            padding: 6px 16px;
+            padding: 6px 12px;
             border-radius: 20px;
             font-size: 1em;
         }
@@ -143,6 +143,9 @@
             }
             .header + .profile, .profile + .experience {
                 page-break-before: auto;
+            }
+            .skills {
+                page-break-inside: avoid;
             }
         }
     </style>
