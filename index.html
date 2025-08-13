@@ -1,241 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV - Koso.B</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f4f6f8;
-            margin: 0;
-            padding: 0;
-            color: #222;
-        }
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f4f6f8;
+        margin: 0;
+        padding: 0;
+        color: #222;
+      }
+      .container {
+        max-width: 800px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        padding: 40px 32px;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 24px;
+        margin-bottom: 32px;
+      }
+      .avatar {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        background: #e0e0e0;
+        object-fit: cover;
+      }
+      .profile-info h1 {
+        margin: 0 0 8px 0;
+        font-size: 2.2rem;
+        font-weight: 700;
+      }
+      .profile-info p {
+        margin: 0;
+        color: #666;
+      }
+      section {
+        margin-bottom: 32px;
+      }
+      h2 {
+        font-size: 1.3rem;
+        color: #1976d2;
+        margin-bottom: 16px;
+        letter-spacing: 1px;
+      }
+      .experience,
+      .education {
+        margin-bottom: 16px;
+      }
+      .job-title,
+      .degree {
+        font-weight: 600;
+        color: #333;
+      }
+      .company,
+      .school {
+        color: #1976d2;
+        font-weight: 500;
+      }
+      .date {
+        color: #888;
+        font-size: 0.95em;
+      }
+      ul.skills {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      ul.skills li {
+        background: #e3f2fd;
+        color: #1976d2;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 1em;
+      }
+      .download-btn {
+        display: inline-block;
+        margin-bottom: 24px;
+        padding: 10px 24px;
+        background: #1976d2;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+        box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+      }
+      .download-btn:hover {
+        background: #125ea7;
+      }
+      .website-link {
+        color: #1976d2;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 2px solid #1976d2;
+        transition: color 0.2s, border-bottom 0.2s;
+      }
+      .website-link:hover {
+        color: #125ea7;
+        border-bottom: 2px solid #125ea7;
+      }
+      @media (max-width: 600px) {
         .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-            padding: 40px 32px;
+          padding: 20px 8px;
         }
-        .header {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 24px;
-            margin-bottom: 32px;
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
         }
         .avatar {
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            background: #e0e0e0;
-            object-fit: cover;
+          width: 72px;
+          height: 72px;
         }
-        .profile-info h1 {
-            margin: 0 0 8px 0;
-            font-size: 2.2rem;
-            font-weight: 700;
-        }
-        .profile-info p {
-            margin: 0;
-            color: #666;
-        }
-        section {
-            margin-bottom: 32px;
-        }
-        h2 {
-            font-size: 1.3rem;
-            color: #1976d2;
-            margin-bottom: 16px;
-            letter-spacing: 1px;
-        }
-        .experience, .education {
-            margin-bottom: 16px;
-        }
-        .job-title, .degree {
-            font-weight: 600;
-            color: #333;
-        }
-        .company, .school {
-            color: #1976d2;
-            font-weight: 500;
-        }
-        .date {
-            color: #888;
-            font-size: 0.95em;
-        }
-        ul.skills {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-        ul.skills li {
-            background: #e3f2fd;
-            color: #1976d2;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 1em;
+      }
+      @media print {
+        body {
+          background: #fff !important;
         }
         .download-btn {
-            display: inline-block;
-            margin-bottom: 24px;
-            padding: 10px 24px;
-            background: #1976d2;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-            box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+          display: none !important;
         }
-        .download-btn:hover {
-            background: #125ea7;
+        .container {
+          box-shadow: none !important;
+          margin: 0 !important;
+          padding: 0.5in 0.5in !important;
+          max-width: 100% !important;
         }
-        .website-link {
-            color: #1976d2;
-            font-weight: 600;
-            text-decoration: none;
-            border-bottom: 2px solid #1976d2;
-            transition: color 0.2s, border-bottom 0.2s;
+        .header,
+        .profile,
+        .experience {
+          /* page-break-inside: avoid; */
+          page-break-after: avoid;
         }
-        .website-link:hover {
-            color: #125ea7;
-            border-bottom: 2px solid #125ea7;
+        .header + .profile,
+        .profile + .experience {
+          page-break-before: auto;
         }
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px 8px;
-            }
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-            }
-            .avatar {
-                width: 72px;
-                height: 72px;
-            }
+        .skills {
+          page-break-inside: avoid;
         }
-        @media print {
-            body {
-                background: #fff !important;
-            }
-            .download-btn {
-                display: none !important;
-            }
-            .container {
-                box-shadow: none !important;
-                margin: 0 !important;
-                padding: 0.5in 0.5in !important;
-                max-width: 100% !important;
-            }
-            .header, .profile, .experience {
-                /* page-break-inside: avoid; */
-                page-break-after: avoid;
-            }
-            .header + .profile, .profile + .experience {
-                page-break-before: auto;
-            }
-            .skills {
-                page-break-inside: avoid;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <button class="download-btn" onclick="window.print()">Download as PDF</button>
-        <section class="header">
-            <img src="./me.png" alt="Avatar" class="avatar">
-            <div class="profile-info">
-                <h1>Koso Bilegsaikhan</h1>
-                <p>Full-Stack Software Engineer</p>
-                <p>khosbilegt.b@gmail.com | (61) 0435-191-722 | <span>
-                <a href="https://koso.dev" target="_blank" class="website-link">https://koso.dev</a>
-                </span> | Sydney, Australia</p>
-            </div>
-        </section>
-        <section class="profile">
-            <h2>Profile</h2>
-            <p>Backend-focused developer with strong experience in Java, systems design, and infrastructure. I build reliable backend services, design clean APIs, and manage deployments with an eye for simplicity and maintainability. While Java is my main tool, I work across the stack when needed, from writing UI components to handling Linux servers and automation.</p>
-            <p>I value well-structured systems, clear code, and practical solutions. I'm comfortable learning and adapting to new technologies when the problem calls for it. Whether it's trying out a new database or exploring a different framework, I focus on what makes sense for the product and team.            </p>
-        </section>
-        <section class="experience">
-            <h2>Experience</h2>
-            <div class="experience">
-                <span class="job-title">Full-Stack Software Engineer</span> <span class="company">@ Unitel LLC</span> <span class="date">2023-2025</span>
-                <ul>
-                    
-                <li>Built Call Center SaaS where I developed a no-code tool to automate workflows, designing both the frontend and backend portions to efficiently manage incoming and outgoing calls. Used React, Java and Asterisk PBX.</li>
-                <li>Created Data Pipeline with TimescaleDB (Postgres), Apache Kafka and in-house ETL tool I developed in Java, alongside a dashboard viewer based in React similar to Apache Superset.</li>
-                <li>Created Face Validation Pipeline for on-site branches of the company with Java and Amazon Rekognition, handling 100,000+ monthly verifications.</li>
-                <li>Built business logic-heavy SMS services that connected users with telecom services.</li>
-                <li>Setup production-ready, high-availability Kubernetes cluster with metrics in Prometheus + Grafana stack.</li>
-                <li>Provided software consultation to affiliate organizations on adoption and deployment of an in-app call feature, leveraging previous experience with the SIP Protocol. Codebase was in Golang.</li>
-                <li>Also Linux Sysadmin stuff.</li>
-                </ul>
-            </div>
-            <div class="experience">
-                <span class="job-title">Software Engineer</span> <span class="company">@ Digital Solutions</span> <span class="date">2022 - 2023</span>
-                <ul>
-                    <li>Developed a Media Streaming tool that ensures synchronized playback across all game instances in a multiplayer environment, serving over 5,000 users. This allowed for virtual meetings within the meta-verse.</li>
-                    <li>Implemented a custom, optimized Linked List to power a sorting algorithm that tracks multiple instances of the same mesh, improving rendering performance. This reduced system requirements significantly, allowing for mobile devices to join the meta-verse.</li>
-                </ul>
-            </div>
-            <div class="experience">
-                <span class="job-title">Research Assistant | Lab Manager</span> <span class="company">@ National University of Mongolia</span> <span class="date">2021 - 2023</span>
-                <ul>
-                    <li>Led a team of 6 students to deliver multiple small-scale projects, coordinating development, code reviews, and deployment.</li>
-                    <li>Created a miniature render engine using Vulkan, demonstrating strong low-level graphics programming skills.</li>
-                    <li>Built a motion-controlled interactive game for Microsoft Kinect, developed in Unreal Engine 4.</li>
-                    <li>Prototyped a virtual classroom in Unreal Engine 4, where students can interact with virtual objects to simulate physical formulas, blending educational technology with interactive gameplay mechanics.</li>
-                </ul>
-            </div>
-        </section>
-        <section>
-            <h2>Education</h2>
-            <div class="education">
-                <p><span class="degree">Master of IT in Artificial Intelligence</span> <span class="school">- Macquarie University</span> <span class="date">2025 - Present</span></p>
-                <p>Currently pursuing advanced studies in artificial intelligence, focusing on machine learning, data science, and intelligent systems.</p>
-                <p><span class="degree">B.Sc. in Computer Science</span> <span class="school">- National University of Mongolia</span> <span class="date">2020 - 2023</span></p>
-                <p>Completed a 4-year Bachelor's in Computer Science in 3 years. Thesis on modular architecture for motion-based games enabling rapid integration of diverse motion controllers.</p>
-            </div>
-        </section>
-        <section>
-            <h2>Skills</h2>
-            <ul class="skills">
-                <li>Java</li>
-                <li>Quarkus</li>
-                <li>Spring Boot</li>
-                <li>Javascript</li>
-                <li>React</li>
-                <li>Angular</li>
-                <li>Next.js</li>
-                <li>Tailwind CSS</li>
-                <li>Python</li>
-                <li>Django</li>
-                <li>Golang</li>
-                <li>SQL</li>
-                <li>Git</li>
-                <li>Docker</li>
-                <li>Kubernetes</li>
-                <li>AWS</li>
-                <li>Node.js</li>
-                <li>TypeScript</li>
-                <li>Grafana</li>
-                <li>Prometheus</li>
-                <li>Gitlab CI/CD</li>
-                <li>Linux</li>
-            </ul>
-        </section>
+      <button class="download-btn" onclick="window.print()">
+        Download as PDF
+      </button>
+      <section class="header">
+        <img src="./me.png" alt="Avatar" class="avatar" />
+        <div class="profile-info">
+          <h1>Koso Bilegsaikhan</h1>
+          <p>Full-Stack Software Engineer</p>
+          <p>
+            khosbilegt.b@gmail.com | (61) 0435-191-722 |
+            <span>
+              <a href="https://koso.dev" target="_blank" class="website-link"
+                >https://koso.dev</a
+              >
+            </span>
+            | Sydney, Australia
+          </p>
+        </div>
+      </section>
+      <section class="profile">
+        <h2>Profile</h2>
+        <p>
+          Backend-focused developer with strong experience in Java, systems
+          design, and infrastructure. I build reliable backend services, design
+          clean APIs, and manage deployments with an eye for simplicity and
+          maintainability. While Java is my main tool, I work across the stack
+          when needed, from writing UI components to handling Linux servers and
+          automation.
+        </p>
+        <p>
+          I value well-structured systems, clear code, and practical solutions.
+          I'm comfortable learning and adapting to new technologies when the
+          problem calls for it. Whether it's trying out a new database or
+          exploring a different framework, I focus on what makes sense for the
+          product and team.
+        </p>
+      </section>
+      <section class="experience">
+        <h2>Experience</h2>
+        <div class="experience">
+          <span class="job-title"
+            >Full-Stack Software Engineer & DevOps Specialist
+          </span>
+          <span class="company">@ Freelance</span>
+          <span class="date">2025-Present</span>
+          <ul>
+            <li>
+              Found critical scaling issues for Plutio and working on
+              implementing observability into the infrastructure on Google Cloud
+              with Grafana.
+            </li>
+            <li>
+              Completed a landing page using PayloadCMS (NextJS) in 2 weeks.
+              Hero animation uses ThreeJS. Used Elevenlabs for in-web chatbot
+              and exposed to the mobile network via Twilio, which takes demo
+              appointments and connects to Pipedrive CMS.
+            </li>
+          </ul>
+        </div>
+        <div class="experience">
+          <span class="job-title">Full-Stack Software Engineer</span>
+          <span class="company">@ Unitel LLC</span>
+          <span class="date">2023-2025</span>
+          <ul>
+            <li>
+              Built Call Center SaaS where I developed a no-code tool to
+              automate workflows, designing both the frontend and backend
+              portions to efficiently manage incoming and outgoing calls. Used
+              React, Java and Asterisk PBX.
+            </li>
+            <li>
+              Created Data Pipeline with TimescaleDB (Postgres), Apache Kafka
+              and in-house ETL tool I developed in Java, alongside a dashboard
+              viewer based in React similar to Apache Superset.
+            </li>
+            <li>
+              Created Face Validation Pipeline for on-site branches of the
+              company with Java and Amazon Rekognition, handling 100,000+
+              monthly verifications.
+            </li>
+            <li>
+              Built business logic-heavy SMS services that connected users with
+              telecom services.
+            </li>
+            <li>
+              Setup production-ready, high-availability Kubernetes cluster with
+              metrics in Prometheus + Grafana stack.
+            </li>
+            <li>
+              Provided software consultation to affiliate organizations on
+              adoption and deployment of an in-app call feature, leveraging
+              previous experience with the SIP Protocol. Codebase was in Golang.
+            </li>
+            <li>Also Linux Sysadmin stuff.</li>
+          </ul>
+        </div>
+        <div class="experience">
+          <span class="job-title">Software Engineer</span>
+          <span class="company">@ Digital Solutions</span>
+          <span class="date">2022 - 2023</span>
+          <ul>
+            <li>
+              Developed a Media Streaming tool that ensures synchronized
+              playback across all game instances in a multiplayer environment,
+              serving over 5,000 users. This allowed for virtual meetings within
+              the meta-verse.
+            </li>
+            <li>
+              Implemented a custom, optimized Linked List to power a sorting
+              algorithm that tracks multiple instances of the same mesh,
+              improving rendering performance. This reduced system requirements
+              significantly, allowing for mobile devices to join the meta-verse.
+            </li>
+          </ul>
+        </div>
+        <div class="experience">
+          <span class="job-title">Research Assistant | Lab Manager</span>
+          <span class="company">@ National University of Mongolia</span>
+          <span class="date">2021 - 2023</span>
+          <ul>
+            <li>
+              Led a team of 6 students to deliver multiple small-scale projects,
+              coordinating development, code reviews, and deployment.
+            </li>
+            <li>
+              Created a miniature render engine using Vulkan, demonstrating
+              strong low-level graphics programming skills.
+            </li>
+            <li>
+              Built a motion-controlled interactive game for Microsoft Kinect,
+              developed in Unreal Engine 4.
+            </li>
+            <li>
+              Prototyped a virtual classroom in Unreal Engine 4, where students
+              can interact with virtual objects to simulate physical formulas,
+              blending educational technology with interactive gameplay
+              mechanics.
+            </li>
+          </ul>
+        </div>
+        <div class="experience">
+          <span class="job-title">Full-Stack Engineer</span>
+          <span class="company">@ Freelance</span>
+          <span class="date">2021 - 2022</span>
+          <ul>
+            <li>
+              Worked on multiple small, static websites for local businesses
+              using HTML, CSS and JQuery. Started using Headless Wordpress after
+              a few months and gradually moved on to use React/NextJS and
+              Firebase.
+            </li>
+            <li>Sometimes had to build small backends in Django or Express.</li>
+            <li>Built Traffic Test app on Android/iOS using Flutter.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="projects">
+        <h2>Projects</h2>
+        <div class="project">
+          <span class="job-title"
+            ><a href="https://plutio.com" target="_blank" class="website-link"
+              >Plutio Observability</a
+            ></span
+          >
+          <span class="date">2025</span>
+          <ul>
+            <li>
+              Currently working on improving Plutio's infrastructure by adding
+              observability with Grafana.
+            </li>
+          </ul>
+        </div>
+        <div class="project">
+          <span class="job-title"
+            ><a
+              href="https://payloadcms.com"
+              target="_blank"
+              class="website-link"
+              >Primax AI | Landing Page</a
+            ></span
+          >
+          <span class="date">2025</span>
+          <ul>
+            <li>
+              Developed a modern landing page with
+              <a
+                href="https://payloadcms.com"
+                target="_blank"
+                class="website-link"
+                >PayloadCMS (Next.js)</a
+              >, featuring a
+              <a
+                href="https://threejs.org/"
+                target="_blank"
+                class="website-link"
+                >ThreeJS</a
+              >
+              hero animation and integrated
+              <a
+                href="https://elevenlabs.io/"
+                target="_blank"
+                class="website-link"
+                >Elevenlabs</a
+              >
+              chatbot.
+            </li>
+            <li>
+              Connected chatbot to
+              <a href="https://twilio.com/" target="_blank" class="website-link"
+                >Twilio</a
+              >
+              and
+              <a
+                href="https://pipedrive.com/"
+                target="_blank"
+                class="website-link"
+                >Pipedrive</a
+              >
+              for automated demo scheduling.
+            </li>
+          </ul>
+        </div>
+        <div class="project">
+          <span class="job-title">Call Center SaaS</span>
+          <span class="date">2023-2025</span>
+          <ul>
+            <li>
+              Created a no-code workflow automation tool for call centers,
+              including frontend (<a
+                href="https://react.dev/"
+                target="_blank"
+                class="website-link"
+                >React</a
+              >) and backend (<a
+                href="https://www.java.com/"
+                target="_blank"
+                class="website-link"
+                >Java</a
+              >,
+              <a
+                href="https://www.asterisk.org/"
+                target="_blank"
+                class="website-link"
+                >Asterisk PBX</a
+              >) components.
+            </li>
+            <li>
+              Built a data pipeline with
+              <a
+                href="https://www.timescale.com/"
+                target="_blank"
+                class="website-link"
+                >TimescaleDB</a
+              >,
+              <a
+                href="https://kafka.apache.org/"
+                target="_blank"
+                class="website-link"
+                >Kafka</a
+              >, and a custom Java ETL tool, plus a React-based dashboard
+              viewer.
+            </li>
+            <li>
+              Built in micro-service architecture for scalability and
+              maintainability.
+            </li>
+          </ul>
+        </div>
+        <div class="project">
+          <a
+            href="https://koso.dev/blog/customer-validation"
+            target="_blank"
+            class="website-link"
+            >Face Validation Pipeline</a
+          >
+          <span class="date">2023</span>
+          <ul>
+            <li>
+              Developed a face validation system for on-site branches using
+              <a
+                href="https://www.java.com/"
+                target="_blank"
+                class="website-link"
+                >Java</a
+              >
+              and
+              <a
+                href="https://aws.amazon.com/rekognition/"
+                target="_blank"
+                class="website-link"
+                >Amazon Rekognition</a
+              >, processing 100,000+ verifications monthly.
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2>Education</h2>
+        <div class="education">
+          <p>
+            <span class="degree">Master of IT in Artificial Intelligence</span>
+            <span class="school">- Macquarie University</span>
+            <span class="date">2025 - Present</span>
+          </p>
+          <p>
+            Currently pursuing advanced studies in artificial intelligence,
+            focusing on machine learning, data science, and intelligent systems.
+          </p>
+          <p>
+            <span class="degree">B.Sc. in Computer Science</span>
+            <span class="school">- National University of Mongolia</span>
+            <span class="date">2020 - 2023</span>
+          </p>
+          <p>
+            Completed a 4-year Bachelor's in Computer Science in 3 years. Thesis
+            on modular architecture for motion-based games enabling rapid
+            integration of diverse motion controllers.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2>Skills</h2>
+        <ul class="skills">
+          <li>Java</li>
+          <li>Quarkus</li>
+          <li>Spring Boot</li>
+          <li>Javascript</li>
+          <li>React</li>
+          <li>Angular</li>
+          <li>Next.js</li>
+          <li>Tailwind CSS</li>
+          <li>Python</li>
+          <li>Django</li>
+          <li>Golang</li>
+          <li>SQL</li>
+          <li>Git</li>
+          <li>Docker</li>
+          <li>Kubernetes</li>
+          <li>AWS</li>
+          <li>Node.js</li>
+          <li>TypeScript</li>
+          <li>Grafana</li>
+          <li>Prometheus</li>
+          <li>Gitlab CI/CD</li>
+          <li>Linux</li>
+        </ul>
+      </section>
     </div>
-</body>
+  </body>
 </html>
